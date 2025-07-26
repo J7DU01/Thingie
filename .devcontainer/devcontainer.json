@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y firefox && mkdir -p /workspaces/$CODESPACE_NAME/.mozilla && ln -s /workspaces/$CODESPACE_NAME/.mozilla /home/vscode/.mozilla",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y firefox && mkdir -p /workspaces/$(basename $CODESPACE_NAME)/.mozilla && ln -s /workspaces/$(basename $CODESPACE_NAME)/.mozilla /home/vscode/.mozilla",
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
