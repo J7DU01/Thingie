@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers/features/desktop-lite:1": {}
   },
-  "postCreateCommand": "sudo add-apt-repository ppa:mozillateam/ppa -y && echo 'Package: *\\nPin: release o=LP-PPA-mozillateam\\nPin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox && sudo apt-get update && sudo apt-get install -y firefox && mkdir -p /workspaces/$(basename $CODESPACE_NAME)/.mozilla && ln -s /workspaces/$(basename $CODESPACE_NAME)/.mozilla /home/vscode/.mozilla",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y software-properties-common && sudo add-apt-repository ppa:mozillateam/ppa -y && echo 'Package: *\\nPin: release o=LP-PPA-mozillateam\\nPin-Priority: 1001' | sudo tee /etc/apt/preferences.d/mozilla-firefox && sudo apt-get update && sudo apt-get install -y firefox && mkdir -p /workspaces/$(basename $CODESPACE_NAME)/.mozilla && ln -s /workspaces/$(basename $CODESPACE_NAME)/.mozilla /home/vscode/.mozilla",
   "forwardPorts": [6080],
   "portsAttributes": {
     "6080": {
